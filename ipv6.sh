@@ -9,8 +9,13 @@ IPV6_SUBNET="2a00:5740:c:0::/64"
 IPV6_GATEWAY="2a00:5740:c:0::1"
 
 # Script must be running from root
-if [ "$EUID" -ne 0 ];
-  then echo "Please run as root";
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Bu script root yetkisi gerektirir!"
+  echo "💡 Lütfen şu şekilde çalıştırın:"
+  echo "   sudo ./ipv6.sh [parametreler]"
+  echo ""
+  echo "📋 Örnek kullanım:"
+  echo "   sudo ./ipv6.sh -c 10000 -u raymond -p raymond123x -r 0"
   exit 1;
 fi;
 
